@@ -20,9 +20,12 @@ program
       } else {
         rule.create(options.platform);
       }
+    } else {
+      console.log('\n---------->-p, --platform [value] 选择平台 react or vue\n'.yellow);
     }
   });
 
+// 暂时一样逻辑
 program
   .command('update')
   .description('更新配置文件')
@@ -34,6 +37,8 @@ program
       } else {
         rule.update(options.platform);
       }
+    } else {
+      console.log('\n---------->-p, --platform [value] 选择平台 react or vue\n'.yellow);
     }
   });
 
