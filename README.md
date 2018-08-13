@@ -1,4 +1,8 @@
-## 美菜eslint 自动化检测、监察工具
+# mc-lint
+
+美菜代码质量自动化检测、监察工具
+
+![meicai logo](http://www.meicai.cn/assets/images/new-img/logo.png)
 
 ### 说明
 
@@ -15,7 +19,7 @@ mc-lint init -p react   // 可以选择平台
 mc-lint update -p react
 // 团队集体更新 eslint 规则的时候使用，一般不需要更新@mc/felint
 
-添加钩子
+// 自主添加钩子
 package.json
 ...
   "scripts": {
