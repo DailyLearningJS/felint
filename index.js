@@ -50,4 +50,16 @@ program
   });
 
 program
+  .command('help-self')
+  .description('自主执行指令')
+  .action(() => {
+    console.log('\n 可自主执行\n'.green);
+    console.log('\n自助删除所有尾部空白'.yellow);
+    console.log('find . -path "./node_modules" -prune -o -name "*.js" -print | xargs sed -i "" "s/[ ]*$//g"'.green);
+
+    console.log('\n自助删除所有 index.js'.yellow);
+    console.log('find . -path "./node_modules" -prune -o -name "*.js" -print | xargs sed -i "" "s/\/index.js//g"'.green);
+  });
+
+program
   .parse(process.argv);
