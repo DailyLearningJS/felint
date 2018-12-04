@@ -15,8 +15,8 @@ program
   .option('-p, --platform [value]', '选择平台 react or vue')
   .action((options) => {
     if (options.platform) {
-      if (options.platform !== 'react' && options.platform !== 'vue') {
-        console.log('\n----------> 参数只接受 react or vue\n'.red);
+      if (options.platform !== 'react' && options.platform !== 'vue' && options.platform !== 'node') {
+        console.log('\n----------> 参数只接受 react or vue or node\n'.red);
       } else {
         rule.create(options.platform);
       }
@@ -32,8 +32,8 @@ program
   .option('-p, --platform [value]', '选择平台 react or vue')
   .action((options) => {
     if (options.platform) {
-      if (options.platform !== 'react' && options.platform !== 'vue') {
-        console.log('\n----------> 参数只接受 react or vue\n'.red);
+      if (options.platform !== 'react' && options.platform !== 'vue' && options.platform !== 'node') {
+        console.log('\n----------> 参数只接受 react or vue or node\n'.red);
       } else {
         rule.update(options.platform);
       }
