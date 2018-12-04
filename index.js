@@ -12,7 +12,7 @@ program
 program
   .command('init')
   .description('生成初始化文件')
-  .option('-p, --platform [value]', '选择平台 react or vue')
+  .option('-p, --platform <env>', '选择平台', /^(react|react-native|vue|node)$/i, 'react')
   .action((options) => {
     if (options.platform) {
       if (options.platform !== 'react' && options.platform !== 'vue' && options.platform !== 'node') {
@@ -29,7 +29,7 @@ program
 program
   .command('update')
   .description('更新配置文件')
-  .option('-p, --platform [value]', '选择平台 react or vue')
+  .option('-p, --platform <env>', '选择平台', /^(react|react-native|vue|node)$/i, 'react')
   .action((options) => {
     if (options.platform) {
       if (options.platform !== 'react' && options.platform !== 'vue' && options.platform !== 'node') {

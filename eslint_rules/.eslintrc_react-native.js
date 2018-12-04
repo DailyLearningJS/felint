@@ -1,13 +1,20 @@
 module.exports = {
   "plugins": [
-    "react"
+    "react",
+    "react-native"
   ],
   "parser": "babel-eslint",
   "extends": ["airbnb", "eslint-config-i-am-meticulous"],
   "env": {
+    "react-native/react-native": true
   },
   "rules": {
     "strict": 0,
+    // react-native 建议
+    "react-native/no-unused-styles": 1,
+    "react-native/split-platform-components": 1,
+    "react-native/no-inline-styles": 1,
+    "react-native/no-color-literals": 1,
     // 自定义
     "semi": [1, "always", {"omitLastInOneLineBlock": true}],
     "import/no-extraneous-dependencies": 0,
