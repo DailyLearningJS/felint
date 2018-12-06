@@ -14,11 +14,10 @@ function update(plat) {
 }
 
 function run() {
-  if (shell.exec('git status --porcelain | sed s/^[^\\-\\>]*\\-\\>.// | sed s/.M.// | grep ^.*js$ | xargs node node_modules/eslint/bin/eslint -c mcconf/.eslintrc.js --color').code !== 0) {
+  if (shell.exec('git status --porcelain | sed /^D/d | sed s/^[^\\-\\>]*\\-\\>./\s\s\s/ | sed s/...// | grep ^.*js$ | xargs node node_modules/eslint/bin/eslint -c mcconf/.eslintrc.js --color').code !== 0) {
     shell.exit(1);
   }
 }
-
 module.exports = {
   create, run, update
 };
