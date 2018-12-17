@@ -12,16 +12,12 @@ program
 program
   .command('init')
   .description('生成初始化文件')
-  .option('-p, --platform <env>', '选择平台', /^(react|react-native|vue|node)$/i, 'react')
+  .option('-p, --platform <env>', '选择平台', /^(react|react-native|vue|node)$/i, false)
   .action((options) => {
     if (options.platform) {
-      if (options.platform !== 'react' && options.platform !== 'vue' && options.platform !== 'node') {
-        console.log('\n----------> 参数只接受 react or vue or node\n'.red);
-      } else {
-        rule.create(options.platform);
-      }
+      rule.create(options.platform);
     } else {
-      console.log('\n---------->-p, --platform [value] 选择平台 react or vue\n'.yellow);
+      console.log('\n---------->-p, --platform [value] 选择平台 react or vue or react-native or node \n'.yellow);
     }
   });
 
@@ -29,16 +25,12 @@ program
 program
   .command('update')
   .description('更新配置文件')
-  .option('-p, --platform <env>', '选择平台', /^(react|react-native|vue|node)$/i, 'react')
+  .option('-p, --platform <env>', '选择平台', /^(react|react-native|vue|node)$/i, false)
   .action((options) => {
     if (options.platform) {
-      if (options.platform !== 'react' && options.platform !== 'vue' && options.platform !== 'node') {
-        console.log('\n----------> 参数只接受 react or vue or node\n'.red);
-      } else {
-        rule.update(options.platform);
-      }
+      rule.update(options.platform);
     } else {
-      console.log('\n---------->-p, --platform [value] 选择平台 react or vue\n'.yellow);
+      console.log('\n---------->-p, --platform [value] 选择平台 react or vue or react-native or node \n'.yellow);
     }
   });
 

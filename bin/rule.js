@@ -4,6 +4,7 @@ var colors = require('colors');
 function create(plat) {
   shell.mkdir('-p', 'mcconf');
   shell.cp(__dirname + '/../eslint_rules/.eslintrc_' + plat + '.js', 'mcconf/.eslintrc.js');
+  shell.cp(__dirname + '/../eslint_rules/.eslintrc.js', '.eslintrc.js');
   console.log('\n----------> mc-lint 初始化成功\n'.green);
 }
 
@@ -14,10 +15,11 @@ function update(plat) {
 }
 
 function run() {
-  if (shell.exec('git status --porcelain | sed /^D/d | sed s/^[^\\-\\>]*\\-\\>./\s\s\s/ | sed s/...// | grep ^.*js$ | xargs node node_modules/eslint/bin/eslint -c mcconf/.eslintrc.js --color').code !== 0) {
+  if (shell.exec('git status --porcelain | sed /^D/d | sed s/^[^\\-\\>]*\\-\\>./\s\s\s/ | sed s/...// | grep ^.*js$ | xargs node node_modules/eslint/bin/eslint -c .eslintrc.js --color').code !== 0) {
     shell.exit(1);
   }
 }
+
 module.exports = {
   create, run, update
 };
